@@ -15,6 +15,21 @@ let valorMaximo;
 let numeroAleatorio;
 let chances;
 
+function gerarAleatorio(minimo, maximo) {
+  return Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+}
+
+function comecarJogo() {
+  valorMinimo = Number(prompt('Digite o valor mínimo que poderá ser sorteado:'));
+  valorMaximo = Number(prompt('Digite o valor máximo que poderá ser sorteado:'));
+  numeroAleatorio = gerarAleatorio(valorMinimo, valorMaximo);
+  chances = 5;
+
+  console.log(numeroAleatorio);
+
+  pedirPalpite();
+}
+
 function avaliarPalpite(palpite) {
   if (palpite === numeroAleatorio) {
     alert('Parabéns, você ganhou!');
@@ -42,21 +57,14 @@ function avaliarPalpite(palpite) {
   }
 }
 
+
+
 function pedirPalpite() {
   const novoPalpite = Number(prompt('Tente adivinhar o número!'));
 
   avaliarPalpite(novoPalpite);
 }
 
-function comecarJogo() {
-  valorMinimo = Number(prompt('Digite o valor mínimo que poderá ser sorteado:'));
-  valorMaximo = Number(prompt('Digite o valor máximo que poderá ser sorteado:'));
-  numeroAleatorio = gerarAleatorio(valorMinimo, valorMaximo);
-  chances = 5;
 
-  console.log(numeroAleatorio);
-
-  pedirPalpite();
-}
 
 comecarJogo();

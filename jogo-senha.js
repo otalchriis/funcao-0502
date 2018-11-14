@@ -18,3 +18,33 @@
 - O usuário precisa acertar a senha por completo;
 - O usuário tem 10 tentativas de acerto;
 */
+
+let strFinal = "";
+
+
+function gerarAleatorio(num) {
+  return Math.floor(Math.random() * num);
+}
+
+
+for (let i = 0; i < 5; i++){
+  strFinal += gerarAleatorio();
+  
+}
+
+
+function digitarSenha(){
+  senha = Number(prompt("Digite a senha gerada aleatoriamente"))
+  senhaAleatoria = gerarAleatorio(senha)
+
+}
+console.log(strFinal);
+
+
+function advSenha(senha){
+  if (senha === senhaAleatoria){
+    alert("Parabéns, você acertou!")
+  }
+}
+
+digitarSenha();
